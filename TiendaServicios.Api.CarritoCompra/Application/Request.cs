@@ -33,7 +33,7 @@ namespace TiendaServicios.Api.CarritoCompra.Application
                                                         .FirstOrDefaultAsync(x => x.SessionShopingCartId == request.SessionShopingCartId);
 
                 var shoppingCartSessionDetail = await _context.sessionShoppingCartDetails
-                                                        .Where(x => x.SessionShoppingCartDetailId == request.SessionShopingCartId)
+                                                        .Where(x => x.SessionShopingCartId == request.SessionShopingCartId)
                                                         .ToListAsync();
                 List<DetailShoppingCartDTO> shoppingCartSessionDetailDTO = new List<DetailShoppingCartDTO>();
                 foreach (var book in shoppingCartSessionDetail)

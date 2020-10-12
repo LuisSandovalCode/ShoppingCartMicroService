@@ -27,7 +27,7 @@ namespace TiendaServicios.Api.CarritoCompra.RemoteServices
         {
             try
             {
-                var client = _httpClient.CreateClient("Books");
+                var client = _httpClient.CreateClient("books");
                 var httpResponse = await client.GetAsync($"api/Book/{bookId}");
 
                 if (httpResponse.IsSuccessStatusCode)

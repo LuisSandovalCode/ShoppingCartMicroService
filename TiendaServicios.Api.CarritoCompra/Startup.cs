@@ -39,7 +39,8 @@ namespace TiendaServicios.Api.CarritoCompra
             });
 
             services.AddMediatR(typeof(New.Handler).Assembly);
-            services.AddHttpClient("Books", config =>
+            var uri = Configuration["Services:books"];
+            services.AddHttpClient("books", config =>
             {
                 config.BaseAddress = new Uri(Configuration["Services:books"]);
             });
